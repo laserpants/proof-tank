@@ -12,6 +12,15 @@
 \setlength{\parsep}{0pt}     
 }{\end{itemize}} 
 
+\newenvironment{enumerated}{ 
+\begin{enumerate}
+\setlength{\itemsep}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}     
+}{\end{enumerate}} 
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
 \begin{document}
 
 \section*{K-Algebras}
@@ -22,7 +31,7 @@ A vector space $V$ over a field $\mathbb{K}$ is a set of vectors, together with 
 
   \begin{itemized}
     \item vector addition; $ (+) : V \times V \rightarrow V $; and
-    \item scalar multiplication; $ (\cdot) : \mathbb{K} \times V \rightarrow V $;
+    \item scalar multiplication; $ (\cdot) : \mathbb{K} \times V \rightarrow V $
   \end{itemized}
 
 such that 
@@ -30,29 +39,39 @@ such that
   \begin{itemized}
     \item The set $V$ forms an abelian group under vector addition;
       \begin{itemized}
-        \item Associativity; $ \forall u, v, w \in V : (u + v) + w = u + (v + w) $
-        \item Commutativity; $ \forall u, v \in V : u + v = v + u $
-        \item Identity; $ \exists 0 \in V $ s.t. $ \forall v \in V : v + 0 = v $
-        \item Inverse; $ \forall v \in V, \exists (-v) \in V $ s.t. $ v + (-v) = 0 $
+        \item Associativity; $ \forall \vec{u}, \vec{v}, \vec{w} \in V : (\vec{u} + \vec{v}) + \vec{w} = \vec{u} + (\vec{v} + \vec{w}) $
+        \item Commutativity; $ \forall \vec{u}, \vec{v} \in V : \vec{u} + \vec{v} = \vec{v} + \vec{u} $
+        \item Identity; $ \exists \vec{0} \in V $ s.t. $ \forall \vec{v} \in V : \vec{v} + \vec{0} = \vec{v} $
+        \item Inverse; $ \forall \vec{v} \in V, \exists \vec{(-v)} \in V $ s.t. $ \vec{v} + \vec{(-v)} = \vec{0} $
       \end{itemized}
     \item Scalar multiplication distributes over vector addition; $ \forall a \in \mathbb{K}, \vec{u}, \vec{v} \in V : a \cdot (\vec{u} + \vec{v}) = (a \cdot \vec{u}) + (a \cdot \vec{v}) $
     \item Scalar multiplication distributes over addition in $\mathbb{K}$; $ \forall a, b \in \mathbb{K}, \vec{v} \in V : (a + b) \cdot \vec{v} = (a \cdot \vec{v}) + (b \cdot \vec{v}) $
     \item Scalar multiplication is \begin{em}compatible\end{em} with multiplication in $\mathbb{K}$; $ \forall a,b \in \mathbb{K}, \vec{v} \in V : a \cdot (b \cdot \vec{v}) = (ab) \cdot \vec{v} $ 
-    \item The identity law for scalar multiplication holds: $ \forall v \in V : 1_{\mathbb{K}} \cdot v = v $
+    \item The following identity law holds for scalar multiplication; $ \forall \vec{v} \in V : 1_{\mathbb{K}} \cdot \vec{v} = \vec{v} $ (where $1_{\mathbb{K}}$ is the multiplicative identity in $\mathbb{K}$)
   \end{itemized}
+
+The notion of a \begin{em}module\end{em} is a generalization of vector spaces, in which the scalars are elements of any ring (not necessarily a field).
 
 \subsubsection*{Linear map}
 
-If $V$ and $W$ are vector spaces defined over $\mathbb{K}$, a function $f : V \rightarrow W$ is a \begin{em}linear map\end{em} if the following holds
+If $V$ and $W$ are vector spaces defined over $\mathbb{K}$, a function $f : V \rightarrow W$ is a \begin{em}linear map\end{em} if it preserves the vector space structure under the two operations, i.e,
 
-  \begin{itemized}
-    \item $ \forall \vec{u}, \vec{v} \in V : f(\vec{u} + \vec{v}) = f(\vec{u}) + f(\vec{v}) $
-    \item $ \forall a \in \mathbb{K}, v \in V : f(a \cdot \vec{v}) = a \cdot f(\vec{v}) $
-  \end{itemized}
+  \begin{enumerated}
+    \item vector addition; $ \forall \vec{u}, \vec{v} \in V : f(\vec{u} + \vec{v}) = f(\vec{u}) + f(\vec{v}) $; and
+    \item scalar multiplication; $ \forall a \in \mathbb{K}, \vec{v} \in V : f(a \cdot \vec{v}) = a \cdot f(\vec{v}) $
+  \end{enumerated}
+
+In other words, a linear map is a \begin{em}homomorphism\end{em} between vector spaces.
 
 \subsubsection*{Bilinear map}
 
-Given three vector spaces, $U, V, $ and $W$, defined over a a field $\mathbb{K}$,
+Given three vector spaces, $U, V, $ and $W$, all defined over a a field $\mathbb{K}$, a \begin{em}bilinear map\end{em} is a function $b : U \times V \rightarrow W$ which is linear in both arguments. That is,
+
+  \begin{itemized}
+    \item $b$ is linear in the first argument; $ \forall \vec{u}, \vec{x} \in U, \vec{v} \in V : b(\vec{u} + \vec{x}, \vec{v}) = b(\vec{u}, \vec{v}) + b(\vec{x}, \vec{v}) $
+    \item $b$ is linear in the second argument; $ \forall \vec{u} \in U, \vec{v}, \vec{y} \in V : b(\vec{u}, \vec{v} + \vec{y}) = b(\vec{u}, \vec{v}) + b(\vec{u}, \vec{y}) $
+    \item $b$ preserves scaling in both arguments; $ \forall c \in \mathbb{K}, \vec{u} \in U, \vec{v} \in V : b(c \cdot \vec{u}, \vec{v}) = c \cdot b(\vec{u}, \vec{v}) = b(\vec{u}, c \cdot \vec{v}) $
+  \end{itemized}
 
 \subsection*{Algebra over a field}
 
