@@ -23,9 +23,9 @@
 
 \begin{document}
 
-\section*{K-Algebras}
+\section*{K-Algebra}
 
-\subsection*{Vector spaces}
+\subsection*{Vector space}
 
 A vector space $V$ over a field $\mathbb{K}$ is a set of vectors, together with two operations; 
 
@@ -37,7 +37,7 @@ A vector space $V$ over a field $\mathbb{K}$ is a set of vectors, together with 
 such that 
   
   \begin{itemized}
-    \item The set $V$ forms an abelian group under vector addition;
+    \item The set $V$ forms an abelian group under the operation of vector addition;
       \begin{itemized}
         \item Associativity; $ \forall \vec{u}, \vec{v}, \vec{w} \in V : (\vec{u} + \vec{v}) + \vec{w} = \vec{u} + (\vec{v} + \vec{w}) $
         \item Commutativity; $ \forall \vec{u}, \vec{v} \in V : \vec{u} + \vec{v} = \vec{v} + \vec{u} $
@@ -50,9 +50,15 @@ such that
     \item The following identity law holds for scalar multiplication; $ \forall \vec{v} \in V : 1_{\mathbb{K}} \cdot \vec{v} = \vec{v} $ (where $1_{\mathbb{K}}$ is the multiplicative identity in $\mathbb{K}$)
   \end{itemized}
 
-The notion of a \begin{em}module\end{em} is a generalization of vector spaces, in which the scalars are elements of any ring (not necessarily a field).
+\subsubsection*{Compact definition}
 
-\subsubsection*{Linear map}
+TODO
+
+\subsubsection*{Generalization to rings}
+
+The notion of a \begin{em}module\end{em} is a generalization of vector spaces, in which the scalars are elements of any ring (i.e., not necessarily a field).
+
+\subsection*{Linear map}
 
 If $V$ and $W$ are vector spaces defined over $\mathbb{K}$, a function $f : V \rightarrow W$ is a \begin{em}linear map\end{em} if it preserves the vector space structure under the two operations, i.e,
 
@@ -63,14 +69,14 @@ If $V$ and $W$ are vector spaces defined over $\mathbb{K}$, a function $f : V \r
 
 In other words, a linear map is a \begin{em}homomorphism\end{em} between vector spaces.
 
-\subsubsection*{Bilinear map}
+\subsection*{Bilinear map}
 
-Given three vector spaces, $U, V, $ and $W$, all defined over a a field $\mathbb{K}$, a \begin{em}bilinear map\end{em} is a function $b : U \times V \rightarrow W$ which is linear in both arguments. That is,
+Given three vector spaces, $U, V, $ and $W,$ all defined over a a field $\mathbb{K}$, a \begin{em}bilinear map\end{em} is a function $b : U \times V \rightarrow W$ which is linear in both arguments. That is, $b$ is linear with respect to;
 
   \begin{itemized}
-    \item $b$ is linear in the first argument; $ \forall \vec{u}, \vec{x} \in U, \vec{v} \in V : b(\vec{u} + \vec{x}, \vec{v}) = b(\vec{u}, \vec{v}) + b(\vec{x}, \vec{v}) $
-    \item $b$ is linear in the second argument; $ \forall \vec{u} \in U, \vec{v}, \vec{y} \in V : b(\vec{u}, \vec{v} + \vec{y}) = b(\vec{u}, \vec{v}) + b(\vec{u}, \vec{y}) $
-    \item $b$ preserves scaling in both arguments; $ \forall c \in \mathbb{K}, \vec{u} \in U, \vec{v} \in V : b(c \cdot \vec{u}, \vec{v}) = c \cdot b(\vec{u}, \vec{v}) = b(\vec{u}, c \cdot \vec{v}) $
+    \item addition, in the first argument; $ \forall \vec{u}, \vec{x} \in U, \vec{v} \in V : b(\vec{u} + \vec{x}, \vec{v}) = b(\vec{u}, \vec{v}) + b(\vec{x}, \vec{v}) $
+    \item addition, in the second argument; $ \forall \vec{u} \in U, \vec{v}, \vec{y} \in V : b(\vec{u}, \vec{v} + \vec{y}) = b(\vec{u}, \vec{v}) + b(\vec{u}, \vec{y}) $
+    \item scalar multiplication; $ \forall c \in \mathbb{K}, \vec{u} \in U, \vec{v} \in V : b(c \cdot \vec{u}, \vec{v}) = c \cdot b(\vec{u}, \vec{v}) = b(\vec{u}, c \cdot \vec{v}) $
   \end{itemized}
 
 \subsection*{Algebra over a field}
