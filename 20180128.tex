@@ -7,6 +7,7 @@
 
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\id}{id}
 
 \newenvironment{itemized}{ 
 \begin{itemize}
@@ -30,17 +31,17 @@
 
 \subsection*{Vector space}
 
-A vector space $V$ over a field $\mathbb{K}$ is a set of vectors, together with two operations; 
+A vector space $V$ over a field $\mathbb{K}$ is a set of vectors, together with two operations:
 
   \begin{itemized}
-    \item Vector addition: $(+) : V \times V \rightarrow V;$ and
-    \item Scalar multiplication: $(\cdot) : \mathbb{K} \times V \rightarrow V;$
+    \item Vector addition: $(+) : V \times V \rightarrow V$
+    \item Scalar multiplication: $(\cdot) : \mathbb{K} \times V \rightarrow V$
   \end{itemized}
 
 \noindent such that 
   
   \begin{itemized}
-    \item The set $V$ forms an abelian group under the operation of vector addition;
+    \item The set $V$ forms an abelian group under the operation of vector addition
       \begin{itemized}
         \item Associativity: $ \forall \vec{u}, \vec{v}, \vec{w} \in V : (\vec{u} + \vec{v}) + \vec{w} = \vec{u} + (\vec{v} + \vec{w}) $
         \item Commutativity: $ \forall \vec{u}, \vec{v} \in V : \vec{u} + \vec{v} = \vec{v} + \vec{u} $
@@ -58,10 +59,25 @@ These last four axioms can be expressed more compactly, by instead requiring a r
 $$ f : \mathbb{K} \rightarrow \End(V) $$
 from $\mathbb{K}$ to the \begin{em}endomorphism ring\end{em} formed by the group $V.$ This ring $\End(V)$ is defined as
 \begin{enumerated}
-  \item The set of endomorphisms of $V$;
-  \item Addition, defined as pointwise addition of functions; $ \left[\varphi + \psi\right](\vec{v}) = \varphi(\vec{v}) + \psi(\vec{v}) $; and
-  \item Multiplication, defined as function composition; $ \varphi\psi = \varphi \circ \psi. $
+  \item The set of endomorphisms of $V$
+  \item Addition defined as pointwise addition of functions; $ \left[\varphi + \psi\right](\vec{v}) = \varphi(\vec{v}) + \psi(\vec{v}) $ and
+  \item Multiplication defined as function composition; $ \varphi\psi = \varphi \circ \psi. $
 \end{enumerated}
+
+We then define scalar multiplication as
+$$ a \cdot \vec{v} = \left[f(a)\right](\vec{v}) $$
+for which we will use $f_a$ to denote $f(a)$, so that we can write, e.g., $ a \cdot \vec{v} = f_a(\vec{v}) $
+
+$f$ is a ring homomorphism. This means that
+$$
+(1)\ f_{ab} = f_a \circ f_b \quad \quad 
+(2)\ f_{a + b} = f_a + f_b \quad \quad 
+(3)\ f_1 = 1
+$$
+Given any $a \in \mathbb{K}, f(a)$ is a homomorphism $V \rightarrow V$
+$$
+f_a(\vec{u} + \vec{v}) = f_a(\vec{u}) + f_a(\vec{v})
+$$
 
 \subsubsection*{Generalization to rings}
 
@@ -87,6 +103,10 @@ Given three vector spaces, $U, V, $ and $W,$ all defined over a a field $\mathbb
     \item Addition, in the second argument: $ \forall \vec{u} \in U, \vec{v}, \vec{y} \in V : b(\vec{u}, \vec{v} + \vec{y}) = b(\vec{u}, \vec{v}) + b(\vec{u}, \vec{y}) $
     \item Scalar multiplication: $ \forall c \in \mathbb{K}, \vec{u} \in U, \vec{v} \in V : b(c \cdot \vec{u}, \vec{v}) = c \cdot b(\vec{u}, \vec{v}) = b(\vec{u}, c \cdot \vec{v}) $
   \end{itemized}
+
+$$
+[f_a(k) + f_b(k)](\vec{v}) = f_a(k)](\vec{v}) + [f_b(k)](\vec{v})
+$$
 
 \subsection*{Algebra over a field}
 

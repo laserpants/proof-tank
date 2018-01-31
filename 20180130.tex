@@ -1,0 +1,96 @@
+\documentclass{article}
+
+\usepackage[margin=0.7in]{geometry}
+\usepackage[utf8]{inputenc}
+  
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\id}{id}
+
+\newenvironment{itemized}{ 
+\begin{itemize}
+\setlength{\itemsep}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}     
+}{\end{itemize}} 
+
+\newenvironment{enumerated}{ 
+\begin{enumerate}
+\setlength{\itemsep}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}     
+}{\end{enumerate}} 
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\begin{document}
+
+\subsection*{Vector spaces}
+A vector space defined over a field $\mathbb{K}$ is a set $V$ of elements, known as \begin{em}vectors\end{em}, together with two operations; 
+\begin{itemized}
+  \item vector addition, $+ : V \times V \rightarrow V$; and 
+  \item scalar multiplication, $\cdot : \mathbb{K} \times V \rightarrow V;$
+\end{itemized}
+such that the following eight axioms are satisfied:
+\begin{enumerated}
+  \item Addition of vectors is associative:
+  $$ \forall \vec{u}, \vec{v}, \vec{w} \in V : (\vec{u} + \vec{v}) + \vec{w} = \vec{u} + (\vec{v} + \vec{w}) $$
+  \item Addition of vectors is commutative:
+  $$ \forall \vec{u}, \vec{v} \in V : \vec{u} + \vec{v} = \vec{v} + \vec{u} $$
+  \item There exists an identity vector in $V$:
+  $$ \exists \vec{0} \in V \text{ s.t. } \forall \vec{v} \in V : \vec{v} + \vec{0} = \vec{v} $$
+  \item Every vector has an additive inverse:
+  $$ \forall \vec{v} \in V, \exists \vec{(-v)} \in V \text{ s.t. } \vec{v} + \vec{(-v)} = \vec{0} $$
+  \item Scalar multiplication distributes over vector addition:
+  $$ \forall a \in \mathbb{K}, \vec{u}, \vec{v} \in V : a \cdot (\vec{u} + \vec{v}) = (a \cdot \vec{u}) + (a \cdot \vec{v}) $$
+  \item Scalar multiplication is \begin{em}compatible\end{em} with multiplication in $\mathbb{K}$:
+  $$ \forall a,b \in \mathbb{K}, \vec{v} \in V : a \cdot (b \cdot \vec{v}) = (ab) \cdot \vec{v} $$
+  \item Scalar multiplication satisfies the identity law:
+  $$ \forall \vec{v} \in V : 1_{\mathbb{K}} \cdot \vec{v} = \vec{v} \text{ (where $1_{\mathbb{K}}$ is the multiplicative identity in $\mathbb{K}$)} $$
+  \item Scalar multiplication distributes over addition:
+  $$ \forall a, b \in \mathbb{K}, \vec{v} \in V : (a + b) \cdot \vec{v} = (a \cdot \vec{v}) + (b \cdot \vec{v}) $$
+\end{enumerated}
+
+\subsubsection*{Compact definition}
+
+The first four axioms can be replaced by saying that the set $V$ forms an abelian group under the operation of vector addition, with the zero vector ($\vec{0}$) acting as the identity element.
+Axiom 5--8 are identical to the requirement that there exists a ring homomorphism
+$$ f : \mathbb{K} \rightarrow \End(V) $$
+where $\End(V)$ is the endomorphism ring induced by the the group $V,$ that is:
+\begin{enumerated}
+  \item The set of endomorphisms; $\varphi : V \rightarrow V$
+  \item Addition, defined as pointwise addition of functions; $ \left[\varphi + \psi\right](\vec{v}) = \varphi(\vec{v}) + \psi(\vec{v})$
+  \item Multiplication, defined as function composition; $ \varphi\psi = \varphi \circ \psi$
+\end{enumerated}
+We can then define scalar multiplication in terms of this homomorphism, as
+$$ a \cdot \vec{v} = [f(a)](\vec{v}). $$
+To simplify notation, we allow ourselves to write, e.g., $f_k$ to mean $f(k)$. 
+Now, as it turns out, law 5--7 above correspond directly to the ring homomorphism axioms:
+$$
+f_{a + b} = f_a + f_b \ (5) \quad \quad 
+f_{ab} = f_a \circ f_b \ (6) \quad \quad 
+f_1 = \id \ (7)
+$$
+From this first identity, and by the definition of addition in $\End(V)$, we get 
+$$ f_{a + b}(\vec{v}) = [f_a + f_b](\vec{v}) = f_a(\vec{v}) + f_b(\vec{v}) $$
+which gives us the eighth and last axiom as well.
+
+So, to summarize, a vector space is:
+\begin{itemized}
+  \item A field $\mathbb{K}$ 
+  \item An abelian group $V$
+  \item A homomorphism $f : \mathbb{K} \rightarrow \End(V)$
+\end{itemized}
+
+\subsubsection*{Generalization to rings}
+The notion of a \begin{em}module\end{em} is a generalization of vector spaces, in which the scalars are elements of any unital ring (i.e., not necessarily a field).
+
+\subsection*{Linear map}
+
+\subsection*{Bilinear map}
+
+\subsection*{Algebra over a field}
+
+\end{document}
