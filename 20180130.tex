@@ -88,9 +88,22 @@ So, to summarize, a vector space is:
 The notion of a \begin{em}module\end{em} is a generalization of vector spaces, in which the scalars are elements of any unital ring (i.e., not necessarily a field).
 
 \subsection*{Linear map}
+If $V$ and $W$ are vector spaces defined over $\mathbb{K}$, a function $f : V \rightarrow W$ is a \begin{em}linear map\end{em} if it preserves the vector space structure under the two operations; i.e,
+\begin{enumerated}
+  \item Vector addition: $ \forall \vec{u}, \vec{v} \in V : f(\vec{u} + \vec{v}) = f(\vec{u}) + f(\vec{v}) $; and
+  \item Scalar multiplication: $ \forall a \in \mathbb{K}, \vec{v} \in V : f(a \cdot \vec{v}) = a \cdot f(\vec{v}). $
+\end{enumerated}
+In other words, a linear map is a homomorphism between vector spaces.
 
 \subsection*{Bilinear map}
+Given three vector spaces, $U, V, $ and $W,$ all defined over a a field $\mathbb{K}$, a \begin{em}bilinear\end{em} map is a function $b : U \times V \rightarrow W$ which is linear in both arguments. That is, $b$ is linear with respect to;
+\begin{itemized}
+  \item Addition, in the first argument: $ \forall \vec{u}, \vec{x} \in U, \vec{v} \in V : b(\vec{u} + \vec{x}, \vec{v}) = b(\vec{u}, \vec{v}) + b(\vec{x}, \vec{v}) $
+  \item Addition, in the second argument: $ \forall \vec{u} \in U, \vec{v}, \vec{y} \in V : b(\vec{u}, \vec{v} + \vec{y}) = b(\vec{u}, \vec{v}) + b(\vec{u}, \vec{y}) $
+  \item Scalar multiplication: $ \forall c \in \mathbb{K}, \vec{u} \in U, \vec{v} \in V : b(c \cdot \vec{u}, \vec{v}) = c \cdot b(\vec{u}, \vec{v}) = b(\vec{u}, c \cdot \vec{v}) $
+\end{itemized}
 
 \subsection*{Algebra over a field}
+If $\mathbb{K}$ is a field, and $V$ a vector space over $\mathbb{K}$ equipped with a bilinear map $\cdot : V \times V \rightarrow V$, then $V$ is called an \begin{em}algebra over\end{em} $\mathbb{K}$, or $K$-algebra for short.
 
 \end{document}
