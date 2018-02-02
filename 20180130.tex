@@ -2,35 +2,36 @@
 
 \usepackage[margin=0.7in]{geometry}
 \usepackage[utf8]{inputenc}
-  
+
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\id}{id}
 
-\newenvironment{itemized}{ 
+\newenvironment{itemized}{
 \begin{itemize}
 \setlength{\itemsep}{0pt}
 \setlength{\parskip}{0pt}
-\setlength{\parsep}{0pt}     
-}{\end{itemize}} 
+\setlength{\parsep}{0pt}
+}{\end{itemize}}
 
-\newenvironment{enumerated}{ 
+\newenvironment{enumerated}{
 \begin{enumerate}
 \setlength{\itemsep}{0pt}
 \setlength{\parskip}{0pt}
-\setlength{\parsep}{0pt}     
-}{\end{enumerate}} 
+\setlength{\parsep}{0pt}
+}{\end{enumerate}}
 
 \renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\iu}{{i\mkern1mu}}
 
 \begin{document}
 
 \subsection*{Vector spaces}
-A vector space defined over a field $\mathbb{K}$ is a set $V$ of elements, known as \begin{em}vectors\end{em}, together with two operations; 
+A \begin{em}vector space\end{em} defined over a field $\mathbb{K}$ is a set $V$ of elements, known as \begin{em}vectors\end{em}, together with two operations;
 \begin{itemized}
-  \item vector addition, $+ : V \times V \rightarrow V$; and 
+  \item vector addition, $+ : V \times V \rightarrow V$; and
   \item scalar multiplication, $\cdot : \mathbb{K} \times V \rightarrow V;$
 \end{itemized}
 such that the following eight axioms are satisfied:
@@ -66,20 +67,20 @@ where $\End(V)$ is the endomorphism ring induced by the the group $V,$ that is:
 \end{enumerated}
 We can then define scalar multiplication in terms of this homomorphism, as
 $$ a \cdot \vec{v} = [f(a)](\vec{v}). $$
-To simplify notation, we allow ourselves to write, e.g., $f_k$ to mean $f(k)$. 
+To simplify notation, we allow ourselves to write, e.g., $f_k$ to mean $f(k)$.
 Now, as it turns out, law 5--7 above correspond directly to the ring homomorphism axioms:
 $$
-f_{a + b} = f_a + f_b \ (5) \quad \quad 
-f_{ab} = f_a \circ f_b \ (6) \quad \quad 
+f_{a + b} = f_a + f_b \ (5) \quad \quad
+f_{ab} = f_a \circ f_b \ (6) \quad \quad
 f_1 = \id \ (7)
 $$
-From this first identity, and by the definition of addition in $\End(V)$, we get 
+From this first identity, and by the definition of addition in $\End(V)$, we get
 $$ f_{a + b}(\vec{v}) = [f_a + f_b](\vec{v}) = f_a(\vec{v}) + f_b(\vec{v}) $$
 which gives us the eighth and last axiom as well.
 
 So, to summarize, a vector space is:
 \begin{itemized}
-  \item A field $\mathbb{K}$ 
+  \item A field $\mathbb{K}$
   \item An abelian group $V$
   \item A homomorphism $f : \mathbb{K} \rightarrow \End(V)$
 \end{itemized}
@@ -105,5 +106,11 @@ Given three vector spaces, $U, V, $ and $W,$ all defined over a a field $\mathbb
 
 \subsection*{Algebra over a field}
 If $\mathbb{K}$ is a field, and $V$ a vector space over $\mathbb{K}$ equipped with a bilinear map $\cdot : V \times V \rightarrow V$, then $V$ is called an \begin{em}algebra over\end{em} $\mathbb{K}$, or $K$-algebra for short.
+
+\subsubsection*{Example}
+The complex numbers form an algebra over $\mathbb{R}$, with the bilinear map given as multiplication of two complex numbers, defined as:
+$$
+(a + b\iu) \cdot (c + d\iu) = (ac - bd) + (ad + bc)\iu
+$$
 
 \end{document}
