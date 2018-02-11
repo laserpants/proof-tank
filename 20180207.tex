@@ -1,0 +1,70 @@
+\documentclass{article}
+
+\usepackage[margin=0.7in]{geometry}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\id}{id}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}{Lemma}
+
+\newenvironment{itemized}{
+\begin{itemize}
+\setlength{\itemsep}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+\newenvironment{enumerated}{
+\begin{enumerate}
+\setlength{\itemsep}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+}{\end{enumerate}}
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\iu}{{i\mkern1mu}}
+
+\begin{document}
+
+\begin{lemma} 
+  If $F$ is a field, then $F[x]$ forms an integral domain.
+\end{lemma} 
+\begin{proof}
+  First of all, if $F$ is a field, then $F[x]$ is a commutative ring with unity.
+\end{proof}
+
+\begin{theorem} 
+  If $a(x)$ is a polynomial over some field $F$, then $x - c$ is a factor of $a(x)$ precisely when $c$ is a root of $a(x)$.
+\end{theorem}
+If $x - c$ is a factor of $a(x)$, this means that there is some polynomial $b(x)$, such that $a(x) = (x - c)b(x)$. Then $a(c) = (c - c)b(c) = 0 b(c) = 0$. This shows that $c$ is a root of $a(x)$.
+
+If $c$ is a root of $a(x)$, we can use euclidean division and write 
+$$ a(x) = q(x)(x - c) + r(x) $$
+
+
+% If $a(x)$ is a polynomial, and $c$ is a root of $a(x)$, then $x - c$ is a factor of $a(x)$.
+% 
+% $$
+% a(x) = b(x)(x - c) + r(x)
+% $$
+% 
+% $$a(c) = 0$$
+% 
+% $$ a(x) = (x - c)b(x) $$
+% 
+% 
+% If $a(x)$ is a polynomial, and $c_1, c_2, \dots, c_n$ are distinct roots of
+% $a(x)$, then $(x - c_1)(x - c_2)\dots(x - c_n)$ is a factor of $a(x)$.
+
+\end{document}
