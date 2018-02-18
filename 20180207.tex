@@ -44,19 +44,48 @@
   First of all, if $F$ is a field, then $F[x]$ is a commutative ring with unity.
   \begin{itemize}
     \item $F[x]$ is closed under addition:
+      \begin{center}
+        \begin{tabular}{r@{ } l}
+          $ \forall a(x), b(x) \in F[x] : $ & $ a(x) + b(x) $ \\
+          = & $ (a_0 + a_1x + a_2x^2 + \dots + a_nx^n) + (b_0 + b_1x + b_2x^2 + \dots + b_nx^n) $ \\
+          = & $ (a_0 + b_0) + (a_1 + b_1)x + (a_2 + b_2)x^2 + \dots + (a_n + b_n)x^n $ \\
+          $ \in $ & $ F[x] $ (where $n = \max[\deg a(x), \deg b(x)])$.
+        \end{tabular}
+      \end{center}
     \item Addition is associative:
+      \begin{tabular}{l}
+        $ [a(x) + b(x)] + c(x) $
+      \end{tabular}
     \item Existence of additive identity:
+      \begin{tabular}{l@{ } l}
+        $ \forall a(x) \in F[x] : a(x) + 0 $ & $ = (a_0 + a_1x + a_2x^2 + \cdots + a_nx^n) + 0 $ \\
+        & $ = (a_0 + 0) + a_1x + a_2x^2 + \cdots + a_nx^n $ \\
+        & $ = a(x) $
+      \end{tabular}
     \item Existence of additive inverses:
     \item Addition is commutative:
+      \begin{tabular}{l@{ } l}
+        $ \forall a(x), b(x) $ & $ \in F[x] : $ \\
+        $ a(x) + b(x) $ & $ = (a_0 + a_1x + a_2x^2 + \dots + a_nx^n) + (b_0 + b_1x + b_2x^2 + \dots + b_nx^n) $ \\
+        & $ = (a_0 + b_0) + (a_1 + b_1)x + (a_2 + b_2)x^2 + \dots + (a_n + b_n)x^n $ \\ 
+        & $ = (b_0 + a_0) + (b_1 + a_1)x + (b_2 + a_2)x^2 + \dots + (b_n + a_n)x^n $ \\ 
+        & $ = (b_0 + b_1x + b_2x^2 + \dots + b_nx^n) + (a_0 + a_1x + a_2x^2 + \dots + a_nx^n) $ \\
+        & $ = b(x) + a(x) $
+      \end{tabular}
   \end{itemize}
 \end{proof}
+
+\begin{lemma} 
+  $F[x]$ is Euclidean.
+% https://drexel28.wordpress.com/2011/10/24/polynomial-rings-in-relation-to-euclidean-domains-pids-and-ufds/
+\end{lemma} 
 
 \begin{theorem} 
   If $a(x)$ is a polynomial over some field $F$, then $x - c$ is a factor of $a(x)$ precisely when $c$ is a root of $a(x)$.
 \end{theorem}
 If $x - c$ is a factor of $a(x)$, this means that there is some polynomial $b(x)$, such that $a(x) = (x - c)b(x)$. Then $a(c) = (c - c)b(c) = 0 b(c) = 0$. This shows that $c$ is a root of $a(x)$.
 
-If $c$ is a root of $a(x)$, we can use euclidean division and write 
+Assume that $c$ is a root of $a(x)$. Then we use Euclidean division and write 
 $$ a(x) = q(x)(x - c) + r(x) $$
 
 
