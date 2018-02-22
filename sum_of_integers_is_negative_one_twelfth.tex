@@ -27,7 +27,7 @@ We will first consider the series
 
 $$ \lim_{N \to \infty} \sum_{n=1}^N n(-1)^{n-1} = 1 - 2 + 3 - 4 + 5 - 6 + \cdots $$
 
-Let $s = 1 - 2 + 3 - 4 + \cdots$. Then
+Given that the terms of this series do not approach zero, it fails the $n$-th term test for divergence. But we will ignore that for the moment and let $s = 1 - 2 + 3 - 4 + \cdots$. Then
 
 $$
 \begin{tabular}{l@{ } l@{ } l@{ } l@{ } l}
@@ -48,10 +48,14 @@ $$
 \end{tabular}
 $$
 
-So $s = \frac{1}{4}$.
+This suggests that $1 - 2 + 3 - 4 + \cdots = \frac{1}{4}$. Can we transform this to the series $1 + 2 + 3 + 4 + \cdots$?
 
 $$
-1 + 2 + 3 + 4 + \cdots
+\begin{tabular}{l l l l l l l l l}
+      & $1$ & $+ \ 2$ & $+ \ 3$ & $+ \ 4$ & $+ \ 5$ & $+ \ 6$  & $+ \ \cdots$ \\
+  $-$ & $1$ & $- \ 2$ & $+ \ 3$ & $- \ 4$ & $+ \ 5$ & $- \ 6$  & $- \ \cdots$ \\
+      & $0$ & $+ \ 4$ & $+ \ 0$ & $+ \ 8$ & $+ \ 0$ & $+ \ 12$ & $+ \ \cdots$ \\
+\end{tabular}
 $$
 
 \end{document}
